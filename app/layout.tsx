@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Sans, Merriweather } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const jetbrainsMono = JetBrains_Mono({
+const merriweatherHeading = Merriweather({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-heading",
 });
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-mono",
-});
+const notoSans = Noto_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,9 +38,9 @@ export default function RootLayout({
         "antialiased",
         geistSans.variable,
         geistMono.variable,
-        "font-mono",
-        jetbrainsMono.variable,
-        inter.variable,
+        "font-sans",
+        notoSans.variable,
+        merriweatherHeading.variable,
       )}
     >
       <body className='min-h-full flex flex-col'>{children}</body>
