@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Sans, Merriweather } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/sonner";
 
 const merriweatherHeading = Merriweather({
   subsets: ["latin"],
@@ -43,7 +44,10 @@ export default function RootLayout({
         merriweatherHeading.variable,
       )}
     >
-      <body className='min-h-full flex flex-col'>{children}</body>
+      <body className='min-h-full flex flex-col'>
+        {children}
+        <Toaster position='bottom-right' closeButton />
+      </body>
     </html>
   );
 }
