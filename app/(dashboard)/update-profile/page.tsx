@@ -10,7 +10,7 @@ export default async function UpdateProfilePage() {
   const user = await getProfile();
   if (!user) redirect("/sign-in");
   return (
-    <div className='w-full max-w-7xl h-full grid grid-cols-2 gap-6 mx-auto'>
+    <div className='w-full max-w-7xl h-full grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto mb-6 px-3 md:px-0'>
       <UpdateProfile
         email={user?.email}
         firstName={user.name.split(" ")[0]}

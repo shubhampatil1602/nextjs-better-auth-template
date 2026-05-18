@@ -1,7 +1,16 @@
 import { ResetPasswordForm } from "@/components/auth/reset-password-form";
 import { authIsNotRequired } from "@/lib/auth/auth-utils";
 
-export default async function ResetPasswordPage() {
+interface ResetPasswordPageProps {
+  searchParams: Promise<{
+    token?: string;
+  }>;
+}
+
+export default async function ResetPasswordPage({
+  searchParams,
+}: ResetPasswordPageProps) {
   await authIsNotRequired();
-  return <ResetPasswordForm />;
+  const { token } = await searchParams;
+  return <ResetPasswordForm token={token} />;
 }

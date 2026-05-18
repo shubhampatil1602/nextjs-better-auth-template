@@ -65,17 +65,20 @@ export function SignInForm({
           password: data.password,
         },
         {
-          onSuccess: async () => {
-            // toast.success("Welcome back");
-            // router.push("/");
-            console.log("SEND OTP CALLED");
-            const { error } = await authClient.twoFactor.sendOtp({});
-
-            if (error) {
-              toast.error(error.message);
+          onSuccess: async (ctx) => {
+            if (ctx.data.twoFactorRedirect) {
+              console.log("SEND OTP CALLED");
+              const { error } = await authClient.twoFactor.sendOtp({});
+              if (error) {
+                toast.error(error.message);
+                return;
+              }
+              router.push("/two-factor");
+            } else {
+              console.log("ELSE BLOCK - NO OTP SHOULD CALLED");
+              toast.success("Welcome back");
+              router.push("/");
             }
-
-            router.push("/two-factor");
           },
           onError: (ctx) => {
             console.log("Sign in ctx error-----", ctx);

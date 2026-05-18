@@ -2,7 +2,7 @@
 
 import { authClient } from "@/lib/auth/auth-client";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import * as z from "zod";
@@ -29,10 +29,8 @@ const resetPasswordFormSchema = z
 
 type ResetPasswordFormSchema = z.infer<typeof resetPasswordFormSchema>;
 
-export const ResetPasswordForm = () => {
+export const ResetPasswordForm = ({ token }: { token: string | undefined }) => {
   const router = useRouter();
-  const params = useSearchParams();
-  const token = params.get("token");
 
   const {
     register,
@@ -52,8 +50,8 @@ export const ResetPasswordForm = () => {
         { newPassword, token: token as string },
         {
           onSuccess: async () => {
-            router.push("/");
-            toast.success("Password reset successfully");
+            toast.success("Password reset successful. Please sign in.");
+            router.push("/sign-in");
           },
           onError: (ctx) => {
             toast.error(ctx.error.message);
@@ -61,7 +59,7 @@ export const ResetPasswordForm = () => {
         },
       );
     } catch {
-      throw new Error("Something went wrong");
+      toast.error("Something went wrong, please try again.");
     }
   };
 
