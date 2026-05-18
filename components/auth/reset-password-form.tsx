@@ -45,9 +45,14 @@ export const ResetPasswordForm = ({ token }: { token: string | undefined }) => {
   });
 
   const onSubmit = async ({ newPassword }: ResetPasswordFormSchema) => {
+    if (!token) {
+      toast.error("Invalid or expired reset link.");
+      router.push("/request-password");
+      return;
+    }
     try {
       await authClient.resetPassword(
-        { newPassword, token: token as string },
+        { newPassword, token },
         {
           onSuccess: async () => {
             toast.success("Password reset successful. Please sign in.");
