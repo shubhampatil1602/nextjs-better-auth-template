@@ -46,7 +46,11 @@ This project includes a `docker-compose.yml` service for PostgreSQL.
 
 ### 3. Configure environment variables
 
-Create a `.env` file in the project root with the values below.
+Create a `.env` file in the project root with the values below, or copy `.env.example` to `.env`.
+
+```bash
+cp .env.example .env
+```
 
 ```env
 DATABASE_URL=postgresql://admin:admin@localhost:5432/code
