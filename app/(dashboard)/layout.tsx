@@ -23,7 +23,7 @@ export default function DashboardLayout({
           <div className='flex w-6 h-5.5 items-center justify-center bg-primary text-primary-foreground'>
             <Braces className='size-4' />
           </div>
-          BHAI CODE.
+          AUTH TEMPLATE.
         </Link>
         <Button
           className='cursor-pointer'

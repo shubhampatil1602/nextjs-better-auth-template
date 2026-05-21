@@ -19,7 +19,7 @@ interface VerificationEmailProps {
 export const VerificationEmail = ({
   verificationUrl,
   userName,
-  appName = "BHAI CODE.",
+  appName = "AUTH TEMPLATE.",
 }: VerificationEmailProps) => (
   <Html>
     <Head />
@@ -29,8 +29,8 @@ export const VerificationEmail = ({
         <Container className='mx-auto py-5 pb-12'>
           <Text className='text-[16px] leading-6.5'>Hi {userName},</Text>
           <Text className='text-[16px] leading-6.5'>
-            Welcome to BHAI CODE. Thank you for signing up in {appName} Please
-            confirm your email address by clicking the button below.
+            Welcome to AUTH TEMPLATE. Thank you for signing up in {appName}{" "}
+            Please confirm your email address by clicking the button below.
           </Text>
           <Section className='text-center'>
             <Button

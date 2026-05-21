@@ -25,3 +25,22 @@ export async function getProfile() {
 
   return findUser;
 }
+
+export async function currentUserRole() {
+  const session = await authSession();
+
+  if (!session) {
+    throw new Error("Unauthorized");
+  }
+
+  const findUser = await prisma.user.findUnique({
+    where: {
+      id: session.user.id,
+    },
+    select: {
+      role: true,
+    },
+  });
+
+  return findUser?.role;
+}

@@ -17,7 +17,7 @@ export const OtpEmail = ({ otp }: OtpEmailProps) => (
     <Head />
     <Tailwind>
       <Body className='bg-white'>
-        <Preview>Your login code for BHAI CODE.</Preview>
+        <Preview>Your login code for AUTH TEMPLATE.</Preview>
         <Container className='mx-auto p-5 pb-12'>
           <Text className='text-[16px] leading-6.5'>
             Please find your OTP code to login below.

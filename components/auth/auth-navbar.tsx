@@ -18,7 +18,7 @@ export function AuthNavbar({
         <div className='flex w-6 h-5.5 items-center justify-center bg-primary text-primary-foreground'>
           <Braces className='size-4' />
         </div>
-        BHAI CODE.
+        AUTH TEMPLATE.
       </Link>
       <div className='flex gap-6 items-center'>
         <Button>Theme</Button>

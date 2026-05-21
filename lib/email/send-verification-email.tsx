@@ -17,7 +17,7 @@ export const sendVerificationEmailTemplate = async ({
   await resend.emails.send({
     from: process.env.EMAIL_FROM!,
     to,
-    subject: "Welcome to BHAI CODE.",
+    subject: "Welcome to AUTH TEMPLATE.",
     react: (
       <VerificationEmail
         verificationUrl={verificationUrl}

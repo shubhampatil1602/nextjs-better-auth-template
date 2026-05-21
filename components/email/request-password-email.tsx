@@ -24,7 +24,7 @@ export const RequestPasswordEmail = ({
     <Head />
     <Tailwind>
       <Body className='bg-white'>
-        <Preview>Reset your password for BHAI CODE.</Preview>
+        <Preview>Reset your password for AUTH TEMPLATE.</Preview>
         <Container className='mx-auto py-5 pb-12'>
           <Heading
             as='h1'
@@ -33,8 +33,8 @@ export const RequestPasswordEmail = ({
             Hello
           </Heading>
           <Text className='text-[16px] leading-6.5'>
-            We recieved a request to reset the password for BHAI CODE account
-            associated with {to}
+            We recieved a request to reset the password for AUTH TEMPLATE
+            account associated with {to}
           </Text>
           <Section className='text-center'>
             <Button
